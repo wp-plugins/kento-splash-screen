@@ -4,7 +4,7 @@ Donate link:
 Tags: splash screen, splash page, welcome page, landing page, splashscreen, splash, popup box, Popup Dialog, Popup, popups
 Requires at least: 3.7
 Tested up to: 3.8
-Stable tag: 1.0
+Stable tag: 1.1
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -45,6 +45,10 @@ Plugin Features
 
 == Changelog ==
 
+= 1.1 =
+* Added Test Mode.
+* javascript problem fixed.
+
 = 1.0 =
-* Initial release
+* Initial release.
 

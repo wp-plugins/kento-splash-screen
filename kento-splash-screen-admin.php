@@ -16,8 +16,10 @@
 			update_option('kento_splash_screen_border_color', $kento_splash_screen_border_color);
 			
 			$kento_splash_screen_content = $_POST['kento_splash_screen_content'];
-			update_option('kento_splash_screen_content', $kento_splash_screen_content);			
-			
+			update_option('kento_splash_screen_content', $kento_splash_screen_content);	
+					
+			$kento_splash_screen_demo = $_POST['kento_splash_screen_demo'];
+			update_option('kento_splash_screen_demo', $kento_splash_screen_demo);		
 			
 			?>
 			<div class="updated"><p><strong><?php _e('Changes Saved.' ); ?></strong></p>
@@ -34,7 +36,7 @@
 			$kento_splash_screen_border_size = get_option( 'kento_splash_screen_border_size' );
 			$kento_splash_screen_border_color = get_option( 'kento_splash_screen_border_color' );
 			$kento_splash_screen_content = get_option( 'kento_splash_screen_content' );			
-			
+			$kento_splash_screen_demo = get_option( 'kento_splash_screen_demo' );				
 			
 		}
 
@@ -53,14 +55,22 @@
 <table class="form-table">
                
 
-   
+	<tr valign="top">
+		<th scope="row">Test Mode:
+		</th>
+		<td style="vertical-align:middle;">
+			<input type="checkbox" name="kento_splash_screen_demo" size="7" id="kento-splash-screen-demo"  value ="1" <?php if ( isset( $kento_splash_screen_demo ) ) echo "checked"; ?> >** Will popup for every refresh.
+
+            
+		</td>
+	</tr>   
 
 
 	<tr valign="top">
 		<th scope="row">Background Color:
 		</th>
 		<td style="vertical-align:middle;">
-			<input type="text" name="kento_splash_screen_bg_color" size="7" id="kento-splash-screen-bg-color"  value ="<?php if ( isset( $kento_splash_screen_bg_color ) ) echo $kento_splash_screen_bg_color; ?>">
+			<input type="text" name="kento_splash_screen_bg_color" size="7" id="kento-splash-screen-bg-color"  value ="<?php if ( isset( $kento_splash_screen_bg_color ) ) echo $kento_splash_screen_bg_color; ?>"> 
 
             
 		</td>
