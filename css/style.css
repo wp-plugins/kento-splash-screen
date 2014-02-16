@@ -21,7 +21,7 @@
   position: fixed;
   top: 20%;
   width: 500px;
-  background-image: url("screen.png");
+  /*background-image: url("screen.png");*/
   z-index: 9999999999;
 }
 
@@ -34,4 +34,8 @@
 
 #kento-splash-screen-bg-img-preview img{
 	width:100%;
+	}
+	
+#kento-splash-screen-shortcode{
+	background-color: #9AC5FF;
 	}

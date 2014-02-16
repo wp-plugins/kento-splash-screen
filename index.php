@@ -3,7 +3,7 @@
 Plugin Name: Kento Splash Screen
 Plugin URI: http://kentothemes.com
 Description: splash screen for first visitors to display html content
-Version: 1.0
+Version: 1.2
 Author: KentoThemes
 Author URI: http://kentothemes.com
 License: GPLv2 or later
@@ -11,21 +11,42 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 */
 
 
-wp_enqueue_script('jquery');
 define('KENTO_SPLASH_SCREEN_PLUGIN_PATH', WP_PLUGIN_URL . '/' . plugin_basename( dirname(__FILE__) ) . '/' );
-wp_enqueue_style('kento-splash-screen-style', KENTO_SPLASH_SCREEN_PLUGIN_PATH.'css/style.css');
-
-wp_enqueue_script('kento-splash-screen_ajax_js', plugins_url( '/js/kento-splash-screen-ajax.js' , __FILE__ ) , array( 'jquery' ));
-wp_localize_script( 'kento-splash-screen_ajax_js', 'kento-splash-screen_ajax', array( 'kento-splash-screen_ajaxurl' => admin_url( 'admin-ajax.php')));
-
-
-
-
-function kento_splash_screen_cookie() {
-	if (!isset($_COOKIE['kento_splash_screen'])) {
-		setcookie('kento_splash_screen', 1, time()+1209600, COOKIEPATH, COOKIE_DOMAIN, false);
+function kento_splash_screen_script()
+	{
+	wp_enqueue_script('jquery');
+	wp_enqueue_style('kento-splash-screen-style', KENTO_SPLASH_SCREEN_PLUGIN_PATH.'css/style.css');
+	wp_enqueue_script('kento-splash-screen_ajax_js', plugins_url( '/js/kento-splash-screen-ajax.js' , __FILE__ ) , array( 'jquery' ));
+	wp_enqueue_style( 'wp-color-picker' );
+	wp_enqueue_script( 'kento-splash-screen-color-picker', plugins_url('/js/kento-splash-screen-ajax.js', __FILE__ ), array( 'wp-color-picker' ), false, true );
 	}
-}
+add_action('init', 'kento_splash_screen_script');
+
+
+
+
+
+
+function kento_splash_screen_cookie()
+	{
+		if (!isset($_COOKIE['kento_splash_screen']))
+			{
+				setcookie('kento_splash_screen', 1, time()+1209600, COOKIEPATH, COOKIE_DOMAIN, false);
+			}
+	}
+	
+	
+$kento_splash_screen_demo = get_option( 'kento_splash_screen_demo' );
+	
+if (!empty($kento_splash_screen_demo))
+	{
+		unset($_COOKIE['kento_splash_screen']);
+	}
+	
+	
+	
+	
+	
 add_action( 'init', 'kento_splash_screen_cookie');
 add_action('admin_init', 'kento_splash_screen_init' );
 add_action('admin_menu', 'kento_splash_screen_menu');
@@ -46,21 +67,13 @@ function kento_splash_screen_menu() {
 	register_setting( 'kento_splash_screen_plugin_options', 'kento_splash_screen_border_size');
 	register_setting( 'kento_splash_screen_plugin_options', 'kento_splash_screen_border_color');
 	register_setting( 'kento_splash_screen_plugin_options', 'kento_splash_screen_content');	
-	
+	register_setting( 'kento_splash_screen_plugin_options', 'kento_splash_screen_demo');		
 	
 		
     }
 
 
 
-
-add_action( 'admin_enqueue_scripts', 'kento_splash_screen_enqueue_color_picker' );
-
-function kento_splash_screen_enqueue_color_picker( $hook_suffix ) {
-    // first check that $hook_suffix is appropriate for your admin page
-    wp_enqueue_style( 'wp-color-picker' );
-    wp_enqueue_script( 'kento-splash-screen-color-picker', plugins_url('/js/kento-splash-screen-color-picker.js', __FILE__ ), array( 'wp-color-picker' ), false, true );
-}
 
 add_shortcode('kento-splash-screen', 'display_splash');
 
@@ -87,6 +100,10 @@ function display_splash()
 		 if(!empty($kento_splash_screen_bg_img))
 			{
 				$kento_splash_screen_bg_img = "background-image: url(".$kento_splash_screen_bg_img.");background-repeat:no-repeat;";
+			}
+		else
+			{
+			$kento_splash_screen_bg_img = "background-image: url('".KENTO_SPLASH_SCREEN_PLUGIN_PATH."css/screen.png');";
 			}
 
 
