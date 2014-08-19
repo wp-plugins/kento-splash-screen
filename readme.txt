@@ -1,5 +1,5 @@
 === Kento Splash Screen ===
-Contributors: hasanrang05
+Contributors: kentothemes
 Donate link: 
 Tags: splash screen, splash page, welcome page, landing page, splashscreen, splash, popup box, Popup Dialog, Popup, popups
 Requires at least: 3.7
