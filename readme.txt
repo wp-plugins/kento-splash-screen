@@ -14,10 +14,10 @@ Splash screen box for first time visit or new visitors
 
 Display message or HTML content via splash popup box.
 
-<strong>Details and Support</strong>
-http://kentothemes.com/items/plugins/kento-splash-screen/
+<strong><a href="http://kentothemes.com/items/plugins/kento-splash-screen/">Details and Support</a></strong>
 
-<strong><a href="http://kentothemes.com">Live Preview</a></strong>
+
+<strong style="font-size:50px;"><a href="http://kentothemes.com">Live Preview</a></strong>
 
 
 <strong>Plugin Features</strong>
