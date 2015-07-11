@@ -8,7 +8,7 @@ Stable tag: 1.3
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-Splash scree box for fisrt time visit or new visitors
+Splash screen box for first time visitor or new visitors.
 
 == Description ==
 
@@ -17,10 +17,10 @@ Display message or HTML content via splash popup box.
 Plugin Details and Support
 http://kentothemes.com/items/plugins/kento-splash-screen/
 
-Plugin Features
+<strong>Plugin Features</strong>
 
 * Test Mode.
-* iframe Support.
+* Iframe Support.
 * Custom Width of popup box.
 * Custom Height of popup box.
 * Unlimited Background Color.
@@ -28,7 +28,8 @@ Plugin Features
 * Custom Border Size.
 * Unlimited Border Color.
 * Custom HTML Content.
-* Shortcode System to add any page or post.
+* Shortcode System .
+* Support Post or Page.
 
 
 
@@ -36,8 +37,8 @@ Plugin Features
 
 1. Install as regular WordPress plugin.
 2. Go your Pluings setting via WordPress Dashboard and activate it.
-3. After actvating you will see a menu on left side and go to "<strong>Kento Splash Screen</strong>" setting page and change your setting and save it.
-4. Paste this shortcode <strong>`[kento-splash-screen]`</strong> in which page you want to dissplay popup box.
+3. After activating you will see a menu on left side and go to "<strong>Kento Splash Screen</strong>" setting page and change your setting and save it.
+4. Paste this shortcode <strong>`[kento-splash-screen]`</strong> in which page or post you want to display popup box.
 5. Enjoy!!!
 
 
